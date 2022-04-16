@@ -1,6 +1,6 @@
-#gke_deploy_service
+# gke_deploy_service
 
-artifactregistry.googleapis.com
+
 
 export PROJECT_ID=PROJECT_ID
 
@@ -17,8 +17,7 @@ gcloud artifacts repositories create hello-repo \
 
  gcloud artifacts repositories add-iam-policy-binding hello-repo --member=serviceAccount:<service-account-name>@<project-name>.iam.gserviceaccount.com --role='roles/editor'
 
- gcloud artifacts repositories add-iam-policy-binding hello-repo --member=serviceAccount:iac-gke@makinap0001.iam.gserviceaccount.com --role='roles/editor' --location=$REGION
-
+gcloud services enable artifactregistry.googleapis.com
  
 
 git clone https://github.com/GoogleCloudPlatform/kubernetes-engine-samples
